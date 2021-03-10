@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css'
 
 
-const Login = () =>{
+const Login = (props) =>{
 
 
-    const [dataLogin, setDataLogin] = useState({
+    const [user, setUser] = useState({
         email : '',
         password : ''
         
@@ -15,25 +15,25 @@ const Login = () =>{
     const [message, setMessage] = useState('');
 
 
-    useEffect (()=> {
+    // useEffect (()=> {
 
-    },[]);
+    // },[]);
 
-    useEffect(()=> {
+    // useEffect(()=> {
 
-    });
+    // });
 
 
-    const stateHandler = (ev) => {
-        setDataLogin({...dataLogin, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value});
+    const stateHandler = (event) => {
+        setUser({...user, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
     }
 
     const sendData = async () => {
         console.log('se ha enviado');
 
         const body = {
-            email: dataLogin.email,
-            password: dataLogin.password
+            email: user.email,
+            password: user.password
         };
 
 
@@ -44,7 +44,7 @@ const Login = () =>{
 
     return(
         <div className='viewLogin'>
-            <pre>{JSON.stringify(dataLogin, null,2)}</pre>
+            {/* <pre>{JSON.stringify(user, null,2)}</pre> */}
             <div className='cardLogin'>
 
                 <p>Email :</p>
@@ -52,16 +52,10 @@ const Login = () =>{
                 <p>Password :</p>
                 <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
                 <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
-            </div>
-           
-
-            
+                <div>{message}</div>
+            </div> 
         </div>
-
     )
-
-
-
 }
 
 export default Login;
