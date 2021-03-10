@@ -29,13 +29,11 @@ const Login = (props) =>{
     }
 
     const sendData = async () => {
-        console.log('se ha enviado');
 
         const body = {
             email: user.email,
             password: user.password
         };
-
 
         const data = await axios.post('http://localhost:3000/clients/login', body);
 
@@ -44,16 +42,22 @@ const Login = (props) =>{
 
     return(
         <div className='viewLogin'>
-            {/* <pre>{JSON.stringify(user, null,2)}</pre> */}
-            <div className='cardLogin'>
+                <div className='loginPic'>
+                    {/* <pre>{JSON.stringify(dataLogin, null,2)}</pre> */}
+                    <div className='cardLogin'>
 
-                <p>Email :</p>
-                <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
-                <p>Password :</p>
-                <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
-                <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
-                <div>{message}</div>
-            </div> 
+                        <p>Email :</p>
+                        <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
+                        <p>Password :</p>
+                        <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
+                        <div className='showPWDiv'>
+                        <input type='checkbox' className='showPW' name='showPS'></input>
+                        <p className='showPWText'>Show Password</p>
+                        </div>
+                        
+                        <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
+                    </div>
+                </div>  
         </div>
     )
 }

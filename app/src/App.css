@@ -12,7 +12,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
+
+.headerText{
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 2.5em;
+  color: black;
+  background: #ffffff;
+  border-radius: 1em;
+}
+
+
 
 .App-link {
   color: #61dafb;
