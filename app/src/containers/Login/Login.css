@@ -1,6 +1,42 @@
-.vistaLogin{
+.viewLogin{
 
     height: 50em;
-    width: 50em;
-    background-color: blueviolet;
+    width: 100vw;
+    background-color: rgb(168, 224, 231);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url('https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background: linear-gradient(rgba(255,255,255,.5));
+}
+.cardLogin{
+    background-color: rgba(0, 255, 255, 0.329);
+    
+    justify-self: center;
+    align-self: center;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    border: solid black 0.3em;
+    justify-content: center;
+    border-radius: 2em;
+}
+
+.emailInput{
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+}
+
+.passInput{
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+}
+
+.loginBtn{
+    justify-self: center;
+    align-self: center;
+    width: 25%;
+    margin-top: 2em;
 }

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Login.css'
 
 
 const Login = () =>{
 
 
-    const [user, setUser] = useState({
+    const [dataLogin, setDataLogin] = useState({
         email : '',
         password : ''
         
@@ -24,34 +25,35 @@ const Login = () =>{
 
 
     const stateHandler = (ev) => {
-        setUser({...user, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value});
+        setDataLogin({...dataLogin, [ev.target.name]: ev.target.type === "number" ? +ev.target.value : ev.target.value});
     }
 
     const sendData = async () => {
         console.log('se ha enviado');
 
         const body = {
-            email: user.email,
-            password: user.password
+            email: dataLogin.email,
+            password: dataLogin.password
         };
 
-        const data = await axios.post('http://localhost:3000/clients', body.email);
+        const data = await axios.post('http://localhost:3000/clients', dataLogin);
         console.log(data);
     };
 
     return(
         <div className='viewLogin'>
-            <pre>{JSON.stringify(user, null,2)}</pre>
+            <pre>{JSON.stringify(dataLogin, null,2)}</pre>
             <div className='cardLogin'>
 
                 <p>Email :</p>
-                <input type='text' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
+                <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
                 <p>Password :</p>
-                <input type='password' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
-                
+                <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
+                <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
             </div>
-            <button onClick={()=> sendData()}>Login!</button>
+           
 
+            
         </div>
 
     )
