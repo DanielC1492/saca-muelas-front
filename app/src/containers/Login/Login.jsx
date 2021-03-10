@@ -35,7 +35,7 @@ const Login = () =>{
             password: user.password
         };
 
-        const data = await axios.post('http://localhost:3000/clients', body.email);
+        const data = await axios.post('http://localhost:3000/clients/login', body);
         console.log(data);
     };
 
