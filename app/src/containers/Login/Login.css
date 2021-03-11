@@ -1,42 +1,66 @@
 .viewLogin{
-
+    
     height: 50em;
     width: 100vw;
     background-color: rgb(168, 224, 231);
     display: flex;
-    justify-content: center;
-    align-content: center;
+    opacity: 2;
+    
+}
+
+.loginPic{
+    height: 50em;
+    width: 100vw;
     background-image: url('https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    background: linear-gradient(rgba(255,255,255,.5));
+    background: linear-gradient(rgba(255,255,255,.2));
+    /* position: relative; */
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    
 }
 .cardLogin{
-    background-color: rgba(0, 255, 255, 0.329);
-    
-    justify-self: center;
-    align-self: center;
+    background-color: #157fe97e;
     width: 30em;
     display: flex;
     flex-direction: column;
-    border: solid black 0.3em;
     justify-content: center;
-    border-radius: 2em;
+    border-radius: 2em;    
 }
 
 .emailInput{
     justify-self: center;
     align-self: center;
-    width: 50%;
+    width: 15em;
 }
 
 .passInput{
     justify-self: center;
     align-self: center;
-    width: 50%;
+    width: 15em;
+}
+
+.showPWDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.showPW{
+    justify-self: center;
+    align-self: center;
+
+}
+.showPWText{
+    font-size: 0.7em;
+
 }
 
 .loginBtn{
     justify-self: center;
     align-self: center;
-    width: 25%;
+    width: 7em;
     margin-top: 2em;
+    margin-bottom: 1em;
 }
