@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+
 import './Login.css'
 
 
 const Login = (props) =>{
 
+    const history = useHistory();
 
     const [user, setUser] = useState({
         email : '',
@@ -40,6 +43,13 @@ const Login = (props) =>{
         console.log(data);
     };
 
+    const redirect = () => {
+        return setTimeout(() => {
+          history.push('/register')
+        }, 1000);
+
+    }
+
     return(
         <div className='viewLogin'>
             {/* <pre>{JSON.stringify(dataLogin, null,2)}</pre> */}
@@ -53,12 +63,10 @@ const Login = (props) =>{
                 <p className='showPWText'>Show Password</p>
                 </div>
                 <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
-                <div className='createAccount'>
+                <div onClick={() => redirect()} className='createAccount'>
                 Not a client?Sign up mothafocka
                 </div>
-            </div>
-            
-               
+            </div>  
         </div>
     )
 }

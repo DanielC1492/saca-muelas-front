@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './Register.css';
 import axios from 'axios';
-import Boton from '../../components/Boton/Boton';
 import { useHistory } from 'react-router-dom';
 
 const Register = (props) => {
@@ -32,13 +31,8 @@ const Register = (props) => {
 
         const data = await axios.post('http://localhost:3000/clients', body)
         console.log(data)
-        return setTimeout(() => {
-          history.push('/login')
-        }, 1500);
     };
-
-
-
+    
     return (
         <div className="viewRegister">
             <pre>{JSON.stringify(user, null,2)}</pre>
