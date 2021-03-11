@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Register.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import checkError from '../../tools/error.handlers'
 
 const Register = (props) => {
 
@@ -14,6 +15,8 @@ const Register = (props) => {
         password: ''
     });
 
+    const [message,setMessage] = useState('');
+
     const stateHandler = (event) => {
         setUser({...user, 
             [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
@@ -25,9 +28,23 @@ const Register = (props) => {
 
         const body = {
             name: user.name,
+            phone: user.phone,
             email: user.email,
             password: user.password
         };
+
+
+        //Error management
+
+        setMessage('');
+
+        let errorMessage = checkError(user);
+        
+        setMessage(errorMessage);
+
+        if(errorMessage){
+            return;
+        }
 
         const data = await axios.post('http://localhost:3000/clients', body)
         console.log(data)
@@ -48,6 +65,8 @@ const Register = (props) => {
                 <input type="password" maxLength="200" placeholder="" name="password" onChange={stateHandler} />
             </div>
             <button className='loginBtn' onClick={()=> sendData()}>Send</button>
+
+            <div className='errorMessage'>{message}</div>
         </div>
     )
 };
