@@ -48,6 +48,12 @@ const Register = (props) => {
 
         const data = await axios.post('http://localhost:3000/clients', body)
         console.log(data)
+
+        return setTimeout(() => {
+            history.push('/login')
+        }, 1000);
+          
+  
     };
     
     return (
