@@ -1,4 +1,6 @@
 import React from 'react'
+import Boton from '../../components/Boton/Boton'
+import './Home.css'
 
 const Home = () => {
     return (
@@ -6,7 +8,9 @@ const Home = () => {
             <div>
                 Estoy en Home
             </div>
-            
+            <div className='buttonStyle'>
+                <Boton name='Register' destination='register'/>
+            </div>
         </div>
     )
 }

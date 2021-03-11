@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import './Register.css';
 import axios from 'axios';
+import Boton from '../../components/Boton/Boton';
+import { useHistory } from 'react-router-dom';
 
 const Register = (props) => {
+
+    const history = useHistory();
     
     const [user,setUser] = useState({
         name: '',
@@ -26,8 +30,11 @@ const Register = (props) => {
             password: user.password
         };
 
-        const data = await axios.post('http://localhost:3000/clients', body);
-        console.log(data);
+        const data = await axios.post('http://localhost:3000/clients', body)
+        console.log(data)
+        return setTimeout(() => {
+          history.push('/login')
+        }, 1500);
     };
 
 
@@ -47,7 +54,6 @@ const Register = (props) => {
                 <input type="password" maxLength="200" placeholder="" name="password" onChange={stateHandler} />
             </div>
             <button className='loginBtn' onClick={()=> sendData()}>Send</button>
- 
         </div>
     )
 };
