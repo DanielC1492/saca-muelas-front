@@ -42,22 +42,23 @@ const Login = (props) =>{
 
     return(
         <div className='viewLogin'>
-                <div className='loginPic'>
-                    {/* <pre>{JSON.stringify(dataLogin, null,2)}</pre> */}
-                    <div className='cardLogin'>
-
-                        <p>Email :</p>
-                        <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
-                        <p>Password :</p>
-                        <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
-                        <div className='showPWDiv'>
-                        <input type='checkbox' className='showPW' name='showPS'></input>
-                        <p className='showPWText'>Show Password</p>
-                        </div>
-                        
-                        <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
-                    </div>
-                </div>  
+            {/* <pre>{JSON.stringify(dataLogin, null,2)}</pre> */}
+            <div className='cardLogin'>
+                <p>Email :</p>
+                <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
+                <p>Password :</p>
+                <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler}></input>
+                <div className='showPWDiv'>
+                <input type='checkbox' className='showPW' name='showPS'></input>
+                <p className='showPWText'>Show Password</p>
+                </div>
+                <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
+                <div className='createAccount'>
+                Not a client?Sign up mothafocka
+                </div>
+            </div>
+            
+               
         </div>
     )
 }
