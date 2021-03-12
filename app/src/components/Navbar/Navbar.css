@@ -1,0 +1,44 @@
+.nav {
+    display: flex;
+    width: 95%;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #157fe9;
+    border-radius: 0.75rem;
+    justify-content: space-around;
+    font-weight: bold;
+    text-align: center;
+}
+
+li {
+    display: inline-flex;
+    width:  70%;
+    padding: 0.5rem; 
+     
+    color: var(--text-color);
+    font-family: var(--font-text);
+}
+
+li a {
+    width:  70%;
+    padding: 1rem; 
+
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-weight: bold;
+}
+
+ul {
+    width: 50%;
+    list-style-type: none;
+    margin: 1rem;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: rgb(172, 136, 17);
+    border-radius: 0.75rem;
+
+    color: var(--text-color);
+}
+
+
+  
