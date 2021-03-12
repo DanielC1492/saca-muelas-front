@@ -3,7 +3,7 @@ import './Register.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import checkError from '../../tools/error.handlers'
-import Navbar from '../../components/Navbar/Navbar';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 const Register = (props) => {
 

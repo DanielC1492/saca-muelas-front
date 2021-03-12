@@ -1,11 +1,10 @@
 import React from 'react'
-import Boton from '../../components/Boton/Boton'
-import Navbar from '../../components/Navbar/Navbar'
+import { NavbarProfile } from '../../components/Navbar/Navbar'
 
 const Profile = () => {
     return (
         <div>
-            <Navbar/>
+            <NavbarProfile/>
             <p>IEEEE</p>
         </div>
     )

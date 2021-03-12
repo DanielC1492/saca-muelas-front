@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Switch, Route, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,4 +16,23 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+const NavbarProfile = () => {
+    return (
+        <div>
+            <div>
+                <ul className="nav">
+                    {/* <li><Link to="/">Pending Appointments</Link></li>
+                    <li><Link to="/login">Schedule an appointment</Link></li> */}
+                    <li><Link to="/">LogOut</Link></li>        
+                </ul>
+            </div>  
+        </div>
+    )
+}
+
+
+
+export {
+    Navbar,
+    NavbarProfile  
+} 
