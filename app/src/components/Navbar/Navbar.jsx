@@ -31,7 +31,6 @@ const NavbarProfile = () => {
 }
 
 
-
 export {
     Navbar,
     NavbarProfile  

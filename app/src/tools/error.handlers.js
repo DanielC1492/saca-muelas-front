@@ -37,6 +37,7 @@ const checkError = (dataState) => {
                 if(dataState[field] === ''){
                     return 'The field password cannot be empty'
                 }
+                // eslint-disable-next-line
                 if(! /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(dataState[field])){
                     return 'The password must contain 8 characters, uppercase, lowercase, numbers and special characters';
                 }

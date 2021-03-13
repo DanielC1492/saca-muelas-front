@@ -15,9 +15,6 @@ const Login = (props) =>{
         
     });
 
-    const [message, setMessage] = useState('');
-
-
     // useEffect (()=> {
 
     // },[]);
