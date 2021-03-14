@@ -68,6 +68,7 @@ const Home = () => {
             <Card className='cardMarket8'>Antirronquidos</Card>
             </div>
             <Footer></Footer>
+            
         </div>
         
     )
