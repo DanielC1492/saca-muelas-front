@@ -5,6 +5,11 @@
     height: 5em;
 }
 
+.top{
+    display: flex;
+    flex-direction: row;
+}
+
 .buttonStyle {
     height: 2.5em;
     display: flex;
@@ -14,3 +19,134 @@
 
 }
 
+.carousel{
+    height: 60vh;
+    color: #fff;
+    text-align: center;
+    background: #364d79;
+    width: 90vw;
+    line-height: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+.bocaDentista{
+    height: 60vh;
+    width: 90vw;
+}
+
+.sexyDoctors{
+    height: 60vh;
+    width: 90vw;
+}
+
+.text1Div{
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 50vh;
+    width: 60vw;
+    background: rgb(2,0,36);
+    background: linear-gradient(43deg, rgba(2,0,36,0.6825105042016807) 0%, rgba(9,42,121,0.49763655462184875) 4%, rgba(4, 73, 222, 0.747) 49%, rgba(219,220,228,0.8449754901960784) 100%);
+    font-size: larger;
+    margin-top: 2em;
+}
+
+.boca{
+    border-image-slice: 20%;
+    height: 31.5vh;
+    width: 50vw;
+}
+
+.botTop{
+    display: flex;
+    flex-direction: row;
+}
+.botBot{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.cardMarket1{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    margin-top: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket2{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    margin-top: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket3{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket4{
+    height: 14em;
+    width: 14em;
+    margin-top: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket5{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket6{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket7{
+    height: 14em;
+    width: 14em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
+
+.cardMarket8{
+    height: 14em;
+    width: 14em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    border: solid 0.2em black;
+
+}
