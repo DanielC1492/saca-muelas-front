@@ -24,10 +24,9 @@
     color: #fff;
     text-align: center;
     background: #364d79;
-    width: 90vw;
-    line-height: 4em;
-    display: flex;
-    justify-content: center;
+    width: 80vw;
+    text-align: center;
+    
 }
 
 .bocaDentista{
@@ -36,6 +35,11 @@
 }
 
 .sexyDoctors{
+    height: 60vh;
+    width: 90vw;
+}
+
+.dentistKid{
     height: 60vh;
     width: 90vw;
 }
