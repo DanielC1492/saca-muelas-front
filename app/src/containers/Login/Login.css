@@ -1,4 +1,4 @@
-.viewLogin{
+.viewLogin {
     
     height: 100vh;
     width: 100vw;
@@ -10,7 +10,7 @@
     
 }
 
-.cardLogin{
+.cardLogin {
     background-color: #ffffff;
     width: 25em;
     height: 20em;
@@ -23,7 +23,7 @@
     
 }
 
-.emailInput{
+.emailInput {
     justify-self: center;
     align-self: center;
     width: 15em;
@@ -32,7 +32,7 @@
     outline-width: 0;
 }
 
-.passInput{
+.passInput {
     justify-self: center;
     align-self: center;
     width: 15em;
@@ -41,23 +41,24 @@
     outline-width: 0;
 }
 
-.showPWDiv{
+.showPWDiv {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.showPW{
+.showPW {
     justify-self: center;
     align-self: center;
 
 }
-.showPWText{
+
+.showPWText {
     font-size: 0.7em;
 
 }
 
-.loginBtn{
+.loginBtn {
     justify-self: center;
     align-self: center;
     width: 7em;
@@ -67,13 +68,25 @@
 
 }
 
-.createAccount{
-    color: violet;
+.createAccount {
+    color: rgb(5, 5, 5);
     cursor: pointer;
+}
+
+.createAccount:local-link {
+    color: rgb(2, 27, 248);
 }
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5em;
+}
+
+.buttonLog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
 }

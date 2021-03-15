@@ -21,8 +21,8 @@ const NavbarProfile = () => {
         <div>
             <div>
                 <ul className="nav">
-                    {/* <li><Link to="/">Pending Appointments</Link></li>
-                    <li><Link to="/login">Schedule an appointment</Link></li> */}
+                    <li><Link to="/appointment">Pending Appointments</Link></li>
+                    <li><Link to="/schedule">Schedule an appointment</Link></li>
                     <li><Link to="/">LogOut</Link></li>        
                 </ul>
             </div>  

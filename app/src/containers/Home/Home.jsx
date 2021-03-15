@@ -14,9 +14,9 @@ const Home = () => {
     return (
         <div className='homeContainer'>
             <Navbar/>
-            <div className='buttonStyle'>
+            {/* <div className='buttonStyle'>
                     <Boton name='Register' destination='register'/>
-                </div>
+                </div> */}
             <div className='top'>
                    
                     <Carousel autoplay dotPosition='left' className='carousel'>
@@ -25,12 +25,7 @@ const Home = () => {
                         <div className='img2'><img className='bocaDentista' src='https://img.freepik.com/free-photo/woman-patient-dentist_1303-9364.jpg?size=626&ext=jpg&ga=GA1.2.611548398.1609027200'></img></div>
                         <div className='img3'><img className='dentistKid' src='https://mynaturaldentist.com/wp-content/uploads/2019/06/happy-gas-dentist-1680x760.jpg'></img></div>
 
-                    </Carousel>
-                
-                   
-               
-                
-                
+                    </Carousel>   
             </div>
             <div className='mid'>
             

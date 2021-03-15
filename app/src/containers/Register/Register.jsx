@@ -66,7 +66,7 @@ const Register = (props) => {
         <div className="viewRegister">
             <Navbar/>
 
-            <pre>{JSON.stringify(user, null,2)}</pre>
+            {/* <pre>{JSON.stringify(user, null,2)}</pre> */}
 
             <div className="formCard">
                 <p>Name:</p>

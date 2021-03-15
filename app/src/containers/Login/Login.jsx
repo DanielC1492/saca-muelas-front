@@ -39,15 +39,18 @@ const Login = (props) =>{
             password: user.password
         };
 
-        const data = await axios.post('http://localhost:3000/clients/login', body);
-
-        console.log(data);
+        const data = await axios.post('http://localhost:3000/clients/login', body)
+        .then(res => {
+            console.log(res);
+            localStorage.setItem("token", JSON.stringify(res.data.token))
+            localStorage.setItem("Client", JSON.stringify(res.data))
+        })    
         
         return setTimeout(() => {
             history.push('/profile')
         }, 1000);
-  
-  
+        // console.log(data);
+        
     };
 
     const redirect = () => {
@@ -69,9 +72,9 @@ const Login = (props) =>{
                 <input type='checkbox' className='showPW' name='showPS'></input>
                 <p className='showPWText'>Show Password</p>
                 </div>
-                <button className='loginBtn' onClick={()=> sendData()}>Login!</button>
+                <button className='loginBtn' onClick={()=> sendData()}>Login</button>
                 <div onClick={() => redirect()} className='createAccount'>
-                Not a client?Sign up mothafocka
+                Not a client? Sign up.
                 </div>
                 <div className="button">
                     <Boton name='Volver'  destination=''/>
