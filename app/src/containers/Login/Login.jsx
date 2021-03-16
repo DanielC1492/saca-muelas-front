@@ -41,7 +41,7 @@ const Login = (props) =>{
 
         const data = await axios.post('http://localhost:3000/clients/login', body)
         .then(res => {
-            console.log(res);
+            console.log(res.data.token);
             localStorage.setItem("token", JSON.stringify(res.data.token))
             localStorage.setItem("Client", JSON.stringify(res.data))
         })    

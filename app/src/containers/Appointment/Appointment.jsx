@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavbarProfile } from '../../components/Navbar/Navbar'
 import axios from 'axios';
 
-const Appointment = () => {
+const Appointment = (props) => {
 
     const [appointment,setAppointment] = useState({
         covid: [],
@@ -43,4 +43,12 @@ const Appointment = () => {
     )
 }
 
-export default Appointment
+const mapDispatchToProps = dispatch => ({
+    addAppointmentsToRedux : () =>
+        dispatch({
+            type : 'ADD_APPOINTMENTS',
+            payload : ''//lo que venga de los hooks
+        })
+})
+
+export default Appointment;
