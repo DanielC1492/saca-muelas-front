@@ -55,14 +55,12 @@ const Schedule = (props) => {
             <div className="formCard">
                 <p>Covid</p>
                 <select name="covid" onChange={stateHandler}>
-                <option value="true">True</option>
-                <option value="false">False</option>
+                    <option value="-----"></option>   
+                    <option value="true">True</option>
+                    <option value="false">False</option>
                 </select>
-                {/* <input type="checkbox" name="covid" value={true} label='false' onChange={stateHandler}/> */}
                 <p>Date</p>
                 <input type="date" name="date" onChange={stateHandler}/>
-                <p>Time</p>
-                <input type="time" name="date" onChange={stateHandler}/>
                 <p>Professional:</p>
                 <input type="text" maxLength="30" placeholder="" name="ProfessionalId" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
@@ -73,4 +71,4 @@ const Schedule = (props) => {
     )
 };
 
-export default Schedule
+export default Schedule;

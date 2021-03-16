@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Boton from '../../components/Boton/Boton';
 import './Login.css'
+import { connect } from 'react-redux';
+import { LOGIN } from "../../redux/types/userTypes";
 
 
 const Login = (props) =>{
@@ -14,15 +16,6 @@ const Login = (props) =>{
         password : ''
         
     });
-
-    // useEffect (()=> {
-
-    // },[]);
-
-    // useEffect(()=> {
-
-    // });
-
 
     const stateHandler = (event) => {
         setUser({...user, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
@@ -41,16 +34,16 @@ const Login = (props) =>{
 
         const data = await axios.post('http://localhost:3000/clients/login', body)
         .then(res => {
-            console.log(res);
-            localStorage.setItem("token", JSON.stringify(res.data.token))
-            localStorage.setItem("Client", JSON.stringify(res.data))
+            console.log(res.data.jwt, 'ESTO ES EL RES.DATA.JWT');
+            console.log(res.data)
+            localStorage.setItem("token", res.data.jwt)
+            localStorage.setItem("client", JSON.stringify(res.data))
+            props.dispatch({type: LOGIN, payload: res.data})
         })    
         
         return setTimeout(() => {
             history.push('/profile')
-        }, 1000);
-        // console.log(data);
-        
+        }, 1000)
     };
 
     const redirect = () => {
@@ -84,4 +77,9 @@ const Login = (props) =>{
     )
 }
 
-export default Login;
+const mapStateToProps = state => {
+    return {client: state.client}
+}
+
+
+export default connect(mapStateToProps) (Login);

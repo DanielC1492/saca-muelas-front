@@ -5,27 +5,26 @@ import axios from 'axios';
 const Appointment = () => {
 
     const [appointment,setAppointment] = useState({
-        covid: [],
-        date: [],
-        professionalId: ''
-
+        covid: '',
+        date: '',
+        clientId: '',
+        
     })
-    const checkClient = JSON.parse(localStorage.getItem('Client'));
 
-    useEffect(() => {
-        const fetchData = async () => {
-        }
-        fetchData();
+    useEffect( async () => {
+        const checkClient = JSON.parse(localStorage.getItem('client'));
+        console.log(checkClient,'CHECKCLIENT<================')
+        const allClientAppointment = await allData(checkClient.jwt)
+        console.log(allClientAppointment.data.result);
     }, []);
-    
-    // useEffect(() => {
-    //     console.log(appointment)
-    // })
-    
-    const sendData = async () => {
-        const data = await axios.get('http://localhost:3000/appointment/', checkClient)
-        console.log(data);
-        console.log(checkClient);
+        
+    const allData = async (token) => {
+        console.log( 'estoy en ALLDATA')
+        return axios.get('http://localhost:3000/appointment/', {
+            headers: {
+              'Authorization': `token ${token}`
+            }
+        })
     };
 
     const stateHandler = (event) => {
@@ -36,7 +35,7 @@ const Appointment = () => {
     return (
         <div>
             <NavbarProfile/>
-            <button className='loginBtn' onClick={()=> sendData()} onChange={stateHandler} >Show</button>
+            <button className='loginBtn' onClick={()=> allData()} onChange={stateHandler} >Show</button>
 
 
         </div>
