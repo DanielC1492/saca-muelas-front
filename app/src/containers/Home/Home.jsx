@@ -5,6 +5,7 @@ import './Home.css'
 import { Carousel } from 'antd';
 import 'antd/lib/carousel/style/index.css'
 import Footer from '../../components/Footer/Footer'
+import promo from '../../img/promo.png';
 
 import { Card, Avatar } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
@@ -19,13 +20,9 @@ const Home = () => {
                 </div> */}
             <div className='top'>
                    
-                    <Carousel autoplay dotPosition='left' className='carousel'>
-
-                        <div className='img1'> <img className='sexyDoctors' src='https://freedesignfile.com/upload/2017/12/Smiling-doctors-Stock-Photo.jpg'></img></div>
-                        <div className='img2'><img className='bocaDentista' src='https://img.freepik.com/free-photo/woman-patient-dentist_1303-9364.jpg?size=626&ext=jpg&ga=GA1.2.611548398.1609027200'></img></div>
-                        <div className='img3'><img className='dentistKid' src='https://mynaturaldentist.com/wp-content/uploads/2019/06/happy-gas-dentist-1680x760.jpg'></img></div>
-
-                    </Carousel>   
+                    <div className='promoIMG'>
+                        <img src={promo} alt=''></img>    
+                    </div>   
             </div>
             <div className='mid'>
             

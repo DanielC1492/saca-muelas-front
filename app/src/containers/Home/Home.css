@@ -19,29 +19,24 @@
 
 }
 
-.carousel{
-    height: 60vh;
-    color: #fff;
-    text-align: center;
-    background: #364d79;
-    width: 80vw;
-    text-align: center;
-    
+.promoIMG{
+    height: 20em;
+    width: 100vw;
 }
 
 .bocaDentista{
     height: 60vh;
-    width: 90vw;
+    width: 100vw;
 }
 
 .sexyDoctors{
     height: 60vh;
-    width: 90vw;
+    width: 100vw;
 }
 
 .dentistKid{
     height: 60vh;
-    width: 90vw;
+    width: 100vw;
 }
 
 .text1Div{
@@ -54,6 +49,7 @@
     background: linear-gradient(43deg, rgba(2,0,36,0.6825105042016807) 0%, rgba(9,42,121,0.49763655462184875) 4%, rgba(4, 73, 222, 0.747) 49%, rgba(219,220,228,0.8449754901960784) 100%);
     font-size: larger;
     margin-top: 2em;
+    
 }
 
 .boca{
