@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import './Schedule.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { NavbarProfile } from '../../components/Navbar/Navbar';
 
 const Schedule = (props) => {
-
+    const URL = 'http://localhost:3000/appointment/'
     const history = useHistory();
     
     const [schedule,setSchedule] = useState({
@@ -14,7 +14,6 @@ const Schedule = (props) => {
         ProfessionalId: ''
     });
 
-    const [message,setMessage] = useState('');
 
     const stateHandler = (event) => {
         setSchedule({...schedule, 
@@ -26,7 +25,12 @@ const Schedule = (props) => {
         if(event.keyCode === 13) sendData()
     }
 
-
+    // useEffect( async () => {
+    //     const checkClient = JSON.parse(localStorage.getItem('client'));
+    //     const createAppointment = await sendData(checkClient.jwt)
+    //     console.log(createAppointment.data.result);
+    // }, []);
+    
     const sendData = async () => {
         console.log('se ha enviado');
 
@@ -36,8 +40,19 @@ const Schedule = (props) => {
             ProfessionalId: schedule.ProfessionalId
         };
 
-        const data = await axios.post('http://localhost:3000/appointment/', body)
-        console.log(data)
+        const checkClient = JSON.parse(localStorage.getItem('client'));
+        const token = checkClient.jwt
+
+        const config = {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        }
+
+
+        const data = await axios.post(URL, body, config);
+
+        console.log(data,'<==============================>')
 
         return setTimeout(() => {
             history.push('/appointment')
@@ -65,8 +80,6 @@ const Schedule = (props) => {
                 <input type="text" maxLength="30" placeholder="" name="ProfessionalId" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
             <button className='loginBtn' onClick={()=> sendData()}>Send</button>
-
-            <div className='errorMessage'>{message}</div>
         </div>
     )
 };

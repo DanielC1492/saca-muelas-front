@@ -4,19 +4,14 @@ import axios from 'axios';
 
 const Appointment = () => {
 
-    const [appointment,setAppointment] = useState({
-        covid: '',
-        date: '',
-        clientId: '',
-        
-    })
+    const [appointment,setAppointment] = useState([])
 
     useEffect( async () => {
         const checkClient = JSON.parse(localStorage.getItem('client'));
         console.log(checkClient,'CHECKCLIENT<================')
         const allClientAppointment = await allData(checkClient.jwt)
         console.log(allClientAppointment.data.result);
-    }, []);
+    },[]);
         
     const allData = async (token) => {
         console.log( 'estoy en ALLDATA')

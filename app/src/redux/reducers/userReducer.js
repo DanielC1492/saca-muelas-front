@@ -9,7 +9,8 @@ const  userReducer = (state = initialState, action) => {
         case LOGIN:
             return {
                 ...state,
-                client: action.payload
+                client: action.payload,
+                // token: action.payload.data.key
             }
                 
         default:

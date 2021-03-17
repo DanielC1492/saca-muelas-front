@@ -34,9 +34,7 @@ const Login = (props) =>{
 
         const data = await axios.post('http://localhost:3000/clients/login', body)
         .then(res => {
-            console.log(res.data.jwt, 'ESTO ES EL RES.DATA.JWT');
-            console.log(res.data)
-            localStorage.setItem("token", res.data.jwt)
+            localStorage.setItem("token", JSON.stringify(res.data.jwt))
             localStorage.setItem("client", JSON.stringify(res.data))
             props.dispatch({type: LOGIN, payload: res.data})
         })    
