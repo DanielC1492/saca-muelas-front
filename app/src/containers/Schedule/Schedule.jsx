@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Schedule.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -25,12 +25,6 @@ const Schedule = (props) => {
         if(event.keyCode === 13) sendData()
     }
 
-    // useEffect( async () => {
-    //     const checkClient = JSON.parse(localStorage.getItem('client'));
-    //     const createAppointment = await sendData(checkClient.jwt)
-    //     console.log(createAppointment.data.result);
-    // }, []);
-    
     const sendData = async () => {
         console.log('se ha enviado');
 

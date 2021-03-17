@@ -32,12 +32,12 @@ const Login = (props) =>{
             password: user.password
         };
 
-        const data = await axios.post('http://localhost:3000/clients/login', body)
+        await axios.post('http://localhost:3000/clients/login', body)
         .then(res => {
             localStorage.setItem("token", JSON.stringify(res.data.jwt))
             localStorage.setItem("client", JSON.stringify(res.data))
             props.dispatch({type: LOGIN, payload: res.data})
-        })    
+        })
         
         return setTimeout(() => {
             history.push('/profile')

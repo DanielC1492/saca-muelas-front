@@ -5,25 +5,31 @@ import axios from 'axios';
 const Appointment = () => {
 
     const [appointment,setAppointment] = useState([])
-
-    useEffect( async () => {
+    const URL = 'http://localhost:3000/appointment/'
+    
+    useEffect(() => {
+        allData();
+    },[setAppointment]);
+    
+    
+    const allData = async () => {
         const checkClient = JSON.parse(localStorage.getItem('client'));
-        console.log(checkClient,'CHECKCLIENT<================')
-        const allClientAppointment = await allData(checkClient.jwt)
-        console.log(allClientAppointment.data.result);
-    },[]);
-        
-    const allData = async (token) => {
-        console.log( 'estoy en ALLDATA')
-        return axios.get('http://localhost:3000/appointment/', {
+        const token = checkClient.jwt
+        // console.log(token)
+    
+        const config = {
             headers: {
-              'Authorization': `token ${token}`
+                'Authorization': 'Bearer ' + token
             }
-        })
+        }
+        const appointmentData = await axios.get(URL, config)
+        console.log(appointmentData.data);
+        return appointmentData
     };
 
     const stateHandler = (event) => {
         setAppointment({...appointment, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
+        console.log(setAppointment())
     }
 
 
@@ -31,7 +37,9 @@ const Appointment = () => {
         <div>
             <NavbarProfile/>
             <button className='loginBtn' onClick={()=> allData()} onChange={stateHandler} >Show</button>
-
+            <div>
+                {JSON.stringify(appointment, null,2)}
+            </div>
 
         </div>
     )
