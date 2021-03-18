@@ -32,7 +32,7 @@ const Login = (props) =>{
             password: user.password
         };
 
-        await axios.post('http://localhost:3000/clients/login', body)
+        const pepe = await axios.post('http://localhost:3000/clients/login', body)
         .then(res => {
             localStorage.setItem("token", JSON.stringify(res.data.jwt))
             localStorage.setItem("client", JSON.stringify(res.data))
