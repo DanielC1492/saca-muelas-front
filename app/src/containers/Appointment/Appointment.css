@@ -1,0 +1,31 @@
+
+.mapContainer {
+    display: flex;
+    height: 40em;
+    width: 50em;
+    background-color: teal;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataCollection {
+    display: flex;
+    background-color: tomato;
+    height: 20em;
+    width: 30em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.professional {
+    display: flex;
+    background-color: turquoise;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+}
