@@ -2,30 +2,33 @@
 .mapContainer {
     display: flex;
     height: 40em;
-    width: 50em;
-    background-color: teal;
+    width: 100%;
+    /* background-color: teal; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Orbitron', sans-serif;
+
 }
 
 .dataCollection {
     display: flex;
-    background-color: tomato;
+    background-color: #0fa4dfde;
+    border-radius: 0.5em;
     height: 20em;
     width: 30em;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: 1em;
+    cursor: pointer;
 
 }
 
 .professional {
     display: flex;
-    background-color: turquoise;
+    /* background-color: turquoise; */
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
 }

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { NavbarProfile } from '../../components/Navbar/Navbar'
+import { useHistory } from 'react-router-dom';
+
 import axios from 'axios';
+import moment from 'moment';
 import './Appointment.css';
 
 const Appointment = () => {
@@ -8,6 +11,9 @@ const Appointment = () => {
     const [appointment,setAppointment] = useState({
         future: []
     })
+
+    const history = useHistory();
+
 
     const URL = 'http://localhost:3000/appointment/'
     
@@ -30,12 +36,27 @@ const Appointment = () => {
         console.log(appointmentData.data);
         setAppointment({...appointment, future: appointmentData.data})
     };
+    
+    const clickMe = async (argument) => {
+        console.log(argument)
+        const checkClient = JSON.parse(localStorage.getItem('client'));
+        const token = checkClient.jwt
 
-    // const clickMe = (argument) => {
-    //     console.log(argument,'ARGUMENT')
-    // }
+        const config = {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        }
+        /*`http://localhost:3000/appointment/${argument.id}`*/
+        const appointmentData = await axios.delete(URL + `${argument.id}`, config)
+        console.log(appointmentData);
+        return setTimeout(() => {
+            history.push('/schedule')
+        }, 1000);
 
-    console.log(appointment.future,'<===================SET==========>')
+    }
+
+    // console.log(appointment.future,'<===================SET==========>')
     if(!appointment.future?.result){
         return (
             <div>
@@ -50,10 +71,9 @@ const Appointment = () => {
                 <div className='mapContainer'>
                     {appointment.future?.result.map(consultation => {
                         return (
-                            <div className='dataCollection' key={consultation.id} /*onClick={()=> clickMe(consultation)}*/>
+                            <div className='dataCollection' key={consultation.id} onClick={()=> clickMe(consultation)}>
                                 <div className='professional'>
                                     Professional: {consultation.ProfessionalId}
-                                    {/* moment.format('Do-MMMM-YYYY')} */}
                                 </div>
                                 <div className='id'>
                                     Appointment: {consultation.id}
@@ -62,14 +82,13 @@ const Appointment = () => {
                                     Covid: {JSON.stringify(consultation.covid)}
                                 </div>
                                 <div className='date'>
-                                    Date: {consultation.date}
+                                    Date: {moment(consultation.date).format('DD MM YYYY hh:mm:ss')}
                                 </div>
                             </div>
                         )
                     
                     })}
                 </div>
-    
             </div>
         )
     }

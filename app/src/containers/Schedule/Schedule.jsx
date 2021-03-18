@@ -36,13 +36,13 @@ const Schedule = (props) => {
 
         const checkClient = JSON.parse(localStorage.getItem('client'));
         const token = checkClient.jwt
+        console.log(token)
 
         const config = {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         }
-
 
         const data = await axios.post(URL, body, config);
 
@@ -51,8 +51,6 @@ const Schedule = (props) => {
         return setTimeout(() => {
             history.push('/appointment')
         }, 1000);
-          
-  
     };
     
     return (
@@ -69,7 +67,7 @@ const Schedule = (props) => {
                     <option value="false">False</option>
                 </select>
                 <p>Date</p>
-                <input type="date" name="date" onChange={stateHandler}/>
+                <input type="datetime-local" name="date" onChange={stateHandler}/>
                 <p>Professional:</p>
                 <input type="text" maxLength="30" placeholder="" name="ProfessionalId" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
