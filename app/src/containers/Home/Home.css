@@ -20,42 +20,58 @@
 }
 
 .promoIMG{
-    height: 20em;
+    height: 40em;
     width: 100vw;
 }
 
-.bocaDentista{
-    height: 60vh;
-    width: 100vw;
-}
 
-.sexyDoctors{
-    height: 60vh;
+.midSec{
     width: 100vw;
-}
-
-.dentistKid{
-    height: 60vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-evenly;
 }
 
 .text1Div{
     justify-content: center;
     align-content: center;
     text-align: center;
-    height: 50vh;
-    width: 60vw;
-    background: rgb(2,0,36);
-    background: linear-gradient(43deg, rgba(2,0,36,0.6825105042016807) 0%, rgba(9,42,121,0.49763655462184875) 4%, rgba(4, 73, 222, 0.747) 49%, rgba(219,220,228,0.8449754901960784) 100%);
+    display: flex;
+    height: 25em;
+    width: 25em;
+    
     font-size: larger;
     margin-top: 2em;
     
 }
 
-.boca{
-    border-image-slice: 20%;
-    height: 31.5vh;
-    width: 50vw;
+.text20{
+    height: 25em;
+    width: 25em;
+    font-size: medium;
+}
+
+.whereAre{
+    margin-right: 2em;
+    height: 40em;
+    width: 60em;
+    background-color: darkolivegreen;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.map{
+    height: 40em;
+    width: 40em;
+    background-color: darkred;
+}
+
+.whereText{
+    height: 40em;
+    width: 20em;
+    background-color: burlywood;
 }
 
 .botTop{
@@ -68,83 +84,11 @@
 }
 
 
-.cardMarket1{
+.card{
     height: 14em;
     width: 14em;
     margin-right: 2em;
     margin-top: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket2{
-    height: 14em;
-    width: 14em;
-    margin-right: 2em;
-    margin-top: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket3{
-    height: 14em;
-    width: 14em;
-    margin-right: 2em;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket4{
-    height: 14em;
-    width: 14em;
-    margin-top: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket5{
-    height: 14em;
-    width: 14em;
-    margin-right: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket6{
-    height: 14em;
-    width: 14em;
-    margin-right: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket7{
-    height: 14em;
-    width: 14em;
-    margin-right: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1em;
-    border: solid 0.2em black;
-
-}
-
-.cardMarket8{
-    height: 14em;
-    width: 14em;
     background-color: rgb(255, 255, 255);
     border-radius: 1em;
     border: solid 0.2em black;

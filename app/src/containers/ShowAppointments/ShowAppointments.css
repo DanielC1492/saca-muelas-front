@@ -1,3 +1,8 @@
+.divGeneral{
+    height: 30em;
+    width: 30em;
+    background-color: darkmagenta;
+}
 
 .mapContainer {
     display: flex;

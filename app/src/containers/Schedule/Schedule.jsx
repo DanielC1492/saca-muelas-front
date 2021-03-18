@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './Schedule.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { NavbarProfile } from '../../components/Navbar/Navbar';
 
 const Schedule = (props) => {
-
+    const URL = 'http://localhost:3000/appointment/'
     const history = useHistory();
     
     const [schedule,setSchedule] = useState({
@@ -14,7 +14,6 @@ const Schedule = (props) => {
         ProfessionalId: ''
     });
 
-    const [message,setMessage] = useState('');
 
     const stateHandler = (event) => {
         setSchedule({...schedule, 
@@ -26,7 +25,6 @@ const Schedule = (props) => {
         if(event.keyCode === 13) sendData()
     }
 
-
     const sendData = async () => {
         console.log('se ha enviado');
 
@@ -36,14 +34,23 @@ const Schedule = (props) => {
             ProfessionalId: schedule.ProfessionalId
         };
 
-        const data = await axios.post('http://localhost:3000/appointment/', body)
-        console.log(data)
+        const checkClient = JSON.parse(localStorage.getItem('client'));
+        const token = checkClient.jwt
+        console.log(token)
+
+        const config = {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        }
+
+        const data = await axios.post(URL, body, config);
+
+        console.log(data,'<==============================>')
 
         return setTimeout(() => {
             history.push('/appointment')
         }, 1000);
-          
-  
     };
     
     return (
@@ -55,20 +62,18 @@ const Schedule = (props) => {
             <div className="formCard">
                 <p>Covid</p>
                 <select name="covid" onChange={stateHandler}>
-                <option value="true" >True</option>
-                <option value="false">False</option>
+                    <option value="-----"></option>   
+                    <option value="true">True</option>
+                    <option value="false">False</option>
                 </select>
-                {/* <input type="checkbox" name="covid" value={true} label='false' onChange={stateHandler}/> */}
                 <p>Date</p>
-                <input type="date" name="date" onChange={stateHandler}/>
+                <input type="datetime-local" name="date" onChange={stateHandler}/>
                 <p>Professional:</p>
                 <input type="text" maxLength="30" placeholder="" name="ProfessionalId" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
             <button className='loginBtn' onClick={()=> sendData()}>Send</button>
-
-            <div className='errorMessage'>{message}</div>
         </div>
     )
 };
 
-export default Schedule
+export default Schedule;
