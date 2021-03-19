@@ -23,8 +23,9 @@ const Appointment = () => {
     
     
     const allData = async () => {
-        const checkClient = JSON.parse(localStorage.getItem('client'));
-        const token = checkClient.jwt
+        const checkClient = JSON.parse(localStorage.getItem('token'));
+        console.log(checkClient)
+        const token = checkClient.data.token
         // console.log(token)
     
         const config = {
@@ -39,8 +40,8 @@ const Appointment = () => {
     
     const clickMe = async (argument) => {
         console.log(argument)
-        const checkClient = JSON.parse(localStorage.getItem('client'));
-        const token = checkClient.jwt
+        const checkClient = JSON.parse(localStorage.getItem('token'));
+        const token = checkClient.data.token
 
         const config = {
             headers: {
@@ -54,7 +55,7 @@ const Appointment = () => {
             console.log(appointmentData);
 
             return setTimeout(() => {
-                history.push('/schedule')
+                history.push('/profile')
             }, 1000);
         }
         /*`http://localhost:3000/appointment/${argument.id}`*/

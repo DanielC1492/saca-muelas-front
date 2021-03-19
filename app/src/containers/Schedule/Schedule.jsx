@@ -36,9 +36,10 @@ const Schedule = (props) => {
             ProfessionalId: schedule.ProfessionalId
         };
 
-        const checkClient = JSON.parse(localStorage.getItem('client'));
-        const token = checkClient.jwt
-        console.log(token)
+        const checkClient = JSON.parse(localStorage.getItem('token'));
+        console.log('CHECKCLIENT==============>',checkClient,'<========CHECKCLIENT')
+        const token = checkClient.data.token
+        console.log('TOKEN==============>',token,'<========TOKEN')
 
         const config = {
             headers: {
