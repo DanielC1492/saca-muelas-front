@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { NavbarProfile } from '../../components/Navbar/Navbar'
 import { useHistory } from 'react-router-dom';
-
 import axios from 'axios';
 import moment from 'moment';
 import './Appointment.css';

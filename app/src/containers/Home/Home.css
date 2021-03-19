@@ -56,10 +56,11 @@
     margin-right: 2em;
     height: 40em;
     width: 60em;
-    background-color: darkolivegreen;
+    background-color: rgba(85, 107, 47, 0);
     margin-top: 2em;
     display: flex;
     flex-direction: row;
+    box-shadow: 5px 9px 19px 5px rgba(0,0,0,0.67);
 }
 
 .map{
@@ -68,10 +69,27 @@
     background-color: darkred;
 }
 
+.whereMap{
+    height: 40em;
+    width: 40em;
+}
+
 .whereText{
     height: 40em;
     width: 20em;
-    background-color: burlywood;
+    background-color: rgba(135, 163, 222, 0.221);
+}
+
+.whatsappIcon{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.emailIcon{
+   
+    height: 1.5em;
+    width: 1.5em;
+    
 }
 
 .botTop{
@@ -83,7 +101,6 @@
     flex-direction: row;
 }
 
-
 .card{
     height: 14em;
     width: 14em;
@@ -92,5 +109,55 @@
     background-color: rgb(255, 255, 255);
     border-radius: 1em;
     border: solid 0.2em black;
+    display: flex;
+    flex-direction: column;
 
 }
+
+.cardIcon{
+    height: 12em;
+    width: 14em;
+}
+
+.protesisImg{
+    height: 12em;
+    width: 14em;
+}
+
+.bracketImg{
+    height: 12em;
+    width: 14em;
+}
+
+.invisibleImg{
+    height: 12em;
+    width: 14em;
+}
+
+.limpiezaImg{
+    height: 12em;
+    width: 14em;
+}
+
+
+.carillaImg{
+    height: 12em;
+    width: 14em;
+}
+
+.cariesImg{
+    height: 12em;
+    width: 14em;
+}
+
+.alitosisImg{
+    height: 12em;
+    width: 14em;
+}
+
+.ronquidosImg{
+    height: 12em;
+    width: 14em;
+}
+
+
