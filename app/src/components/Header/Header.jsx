@@ -14,24 +14,27 @@ const Header = (props) => {
             history.push('/')
         }, 1000);
     }
+    // console.log(props.client.name)
     return (
-        <div>
+        <div className="headerContainer">
             
             {
-                !props.client.id
+                props.client.id
                 ?
                 <>
                     <div>
-                        HOLA
-                        <button  onClick={()=> logOut()}>LogOut</button>
+                        {`${props.client.name}`}
+                        {/* <button  onClick={()=> logOut()}>LogOut</button> */}
+                        <div onClick={()=> logOut()}>logOut</div>
 
                     </div>
                 </>
                 :
                 <>
                     <div>
-                        ADIOS
-                        <button  onClick={()=> logOut()}>LogOut</button>
+                        {`Bye ${props.client.name}`}
+                        <div onClick={()=> logOut()}>logOut</div>
+                        {/* <button  onClick={()=> logOut()}>LogOut</button> */}
                     </div>
                 </>
             }

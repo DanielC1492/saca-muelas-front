@@ -34,8 +34,7 @@ const Login = (props) =>{
 
         const res = await axios.post('http://localhost:3000/clients/login', body)
         console.log(res)
-        const pepe = localStorage.setItem("token", JSON.stringify(res))
-        console.log(pepe)
+        localStorage.setItem("token", JSON.stringify(res))
         localStorage.setItem("client", JSON.stringify(res.data.client))
         props.dispatch({type: LOGIN, payload: res.data})
         

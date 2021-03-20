@@ -18,8 +18,8 @@ function App() {
           <Route path='/login' exact component={Login}/>
           <Route path='/register' exact component={Register}/>
           <Route path='/profile' exact component={Profile} />
-          <Route path='/appointment' exact component={Appointment}/>
-          <Route path='/schedule' exact component={Schedule} />
+          <Route path='/profile/appointment' exact component={Appointment}/>
+          <Route path='/profile/schedule' exact component={Schedule} />
         </Switch>
       </BrowserRouter>
 

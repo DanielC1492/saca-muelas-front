@@ -50,7 +50,6 @@ const Appointment = () => {
         }
         const doAppointment = window.confirm('You are about to delete your appointment, are you sure?')
         if(doAppointment == true){
-            console.log('Hemos entrado')
             const appointmentData = await axios.delete(URL + `${argument.id}`, config)
             console.log(appointmentData);
 
@@ -59,7 +58,6 @@ const Appointment = () => {
             }, 1000);
         }
         /*`http://localhost:3000/appointment/${argument.id}`*/
-
     }
 
     // console.log(appointment.future,'<===================SET==========>')
