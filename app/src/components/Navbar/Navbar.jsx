@@ -30,8 +30,23 @@ const NavbarProfile = () => {
     )
 }
 
+const NavbarAdmin = () => {
+    return (
+        <div>
+            <div>
+                <ul className="nav">
+                    <li><Link to="/allAppointments">All Appointments</Link></li>
+                    <li><Link to="/allClients">Schedule an appointment</Link></li>
+                    <li><Link to="/">LogOut</Link></li>        
+                </ul>
+            </div>  
+        </div>
+    )
+}
+
 
 export {
     Navbar,
-    NavbarProfile  
+    NavbarProfile,
+    NavbarAdmin  
 } 

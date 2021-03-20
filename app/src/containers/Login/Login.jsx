@@ -51,6 +51,26 @@ const Login = (props) =>{
 
     }
 
+
+    const [password, setPassword] = useState({
+        hideShow : 'password'
+    });
+    
+    const [checkbox, setCheckbox] = useState(false) 
+    
+    const toggle = () => {
+        setCheckbox(!checkbox);
+        if(password.hideShow === 'password' ){
+            return setPassword({
+                ...password,hideShow: 'text'
+            })
+        }else{
+            return setPassword({
+                ...password,hideShow : 'password'
+            })
+        }
+    }
+
     return(
         <div className='viewLogin'>
             {/* <pre>{JSON.stringify(dataLogin, null,2)}</pre> */}
@@ -58,9 +78,9 @@ const Login = (props) =>{
                 <p>Email :</p>
                 <input type='text' className='emailInput' maxLength='50' placeholder="" name="email" onChange={stateHandler}></input>
                 <p>Password :</p>
-                <input type='password' className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler} onKeyDown={handleOnKeyDown} ></input>
+                <input type={password.hideShow} className='passInput' maxLength='50' placeholder="" name="password" onChange={stateHandler} onKeyDown={handleOnKeyDown} ></input>
                 <div className='showPWDiv'>
-                <input type='checkbox' className='showPW' name='showPS'></input>
+                <input checked= {checkbox} type= 'checkbox' onChange={() => toggle()} className='showPW' name='showPS'></input>
                 <p className='showPWText'>Show Password</p>
                 </div>
                 <button className='loginBtn' onClick={()=> sendData()}>Login</button>

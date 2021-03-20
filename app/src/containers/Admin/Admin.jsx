@@ -1,7 +1,9 @@
 import React, { useEffect,  } from 'react';
-// import axios from 'axios';
+
 import {useHistory} from 'react-router-dom';
+import { NavbarAdmin } from '../../components/Navbar/Navbar';
 import './Admin.css';
+
 
 
 const Admin = (props) => {
@@ -27,7 +29,10 @@ const Admin = (props) => {
     return (
         <div>
           
-            WELCOME BACK GEEK
+            WELCOME BACK GEEK 
+            <NavbarAdmin>
+                
+            </NavbarAdmin>
            
             
             <div className='buttons'>
