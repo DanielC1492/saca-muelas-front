@@ -37,9 +37,7 @@ const Schedule = (props) => {
         };
 
         const checkClient = JSON.parse(localStorage.getItem('token'));
-        console.log('CHECKCLIENT==============>',checkClient,'<========CHECKCLIENT')
         const token = checkClient.data.token
-        console.log('TOKEN==============>',token,'<========TOKEN')
 
         const config = {
             headers: {
@@ -49,7 +47,7 @@ const Schedule = (props) => {
 
         const data = await axios.post(URL, body, config);
 
-        console.log(data,'<==============================>')
+        // console.log(data,'<==============================>')
 
         return setTimeout(() => {
             history.push('/profile/appointment')

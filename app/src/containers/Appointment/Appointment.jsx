@@ -60,7 +60,6 @@ const Appointment = () => {
         /*`http://localhost:3000/appointment/${argument.id}`*/
     }
 
-    // console.log(appointment.future,'<===================SET==========>')
     if(!appointment.future?.result){
         return (
             <div>

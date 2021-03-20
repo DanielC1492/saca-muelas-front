@@ -29,7 +29,8 @@ const Profile = (props) => {
                     :
                     <>
                         <div>
-                            {`Bye ${props.client.name}`}
+                            {/* {`Bye ${props.client.name}`} */}
+                            
                         </div>
                     </>
                 }
