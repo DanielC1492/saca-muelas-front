@@ -1,0 +1,31 @@
+.formCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40em;
+    width: 100%;
+    background-color: teal;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.loginBtn {
+    border-radius: 0.2em;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.select {
+    border-radius: 0.4em;
+
+    font-family: 'Orbitron', sans-serif;
+ 
+}
+
+.calendar {
+    border-radius: 0.4em;
+
+    font-family: 'Orbitron', sans-serif;
+
+}

@@ -32,12 +32,12 @@ const Login = (props) =>{
             password: user.password
         };
 
-        await axios.post('http://localhost:3000/clients/login', body)
-        .then(res => {
-            localStorage.setItem("token", JSON.stringify(res.data.jwt))
-            localStorage.setItem("client", JSON.stringify(res.data))
-            props.dispatch({type: LOGIN, payload: res.data})
-        })
+        const res = await axios.post('http://localhost:3000/clients/login', body)
+        console.log(res)
+        localStorage.setItem("token", JSON.stringify(res))
+        localStorage.setItem("client", JSON.stringify(res.data.client))
+        props.dispatch({type: LOGIN, payload: res.data})
+        
         
         return setTimeout(() => {
             history.push('/profile')
@@ -88,16 +88,11 @@ const Login = (props) =>{
                 Not a client? Sign up.
                 </div>
                 <div className="button">
-                    <Boton name='Volver'  destination=''/>
+                    <Boton name='Back'  destination=''/>
                 </div>
             </div>  
         </div>
     )
 }
 
-const mapStateToProps = state => {
-    return {client: state.client}
-}
-
-
-export default connect(mapStateToProps) (Login);
+export default connect() (Login);

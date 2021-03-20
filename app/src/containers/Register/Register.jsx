@@ -68,17 +68,17 @@ const Register = (props) => {
 
             {/* <pre>{JSON.stringify(user, null,2)}</pre> */}
 
-            <div className="formCard">
+            <div className="formRegister">
                 <p>Name:</p>
-                <input type="text" maxLength="30" placeholder="" name="name" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
+                <input type="text" maxLength="30" placeholder="Manue" name="name" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
                 <p>Phone:</p>
                 <input type="text" maxLength="30" placeholder="678472162" name="phone" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
                 <p>Email:</p>
                 <input type="email" maxLength="50" placeholder="name@gmail.com" name="email" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
                 <p>Password:</p>
-                <input type="password" maxLength="200" placeholder="" name="password" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
+                <input type="password" maxLength="200" placeholder="Ex:Represent23$" name="password" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
+                <button className='loginBtn' onClick={()=> sendData()}>Send</button>
             </div>
-            <button className='loginBtn' onClick={()=> sendData()}>Send</button>
 
             <div className='errorMessage'>{message}</div>
         </div>

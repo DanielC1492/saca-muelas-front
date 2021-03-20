@@ -22,8 +22,9 @@ const Appointment = (props) => {
     
     
     const allData = async () => {
-        const checkClient = JSON.parse(localStorage.getItem('client'));
-        const token = checkClient.jwt
+        const checkClient = JSON.parse(localStorage.getItem('token'));
+        console.log(checkClient)
+        const token = checkClient.data.token
         // console.log(token)
     
         const config = {
@@ -38,24 +39,26 @@ const Appointment = (props) => {
     
     const clickMe = async (argument) => {
         console.log(argument)
-        const checkClient = JSON.parse(localStorage.getItem('client'));
-        const token = checkClient.jwt
+        const checkClient = JSON.parse(localStorage.getItem('token'));
+        const token = checkClient.data.token
 
         const config = {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         }
-        /*`http://localhost:3000/appointment/${argument.id}`*/
-        const appointmentData = await axios.delete(URL + `${argument.id}`, config)
-        console.log(appointmentData);
-        return setTimeout(() => {
-            history.push('/schedule')
-        }, 1000);
+        const doAppointment = window.confirm('You are about to delete your appointment, are you sure?')
+        if(doAppointment == true){
+            const appointmentData = await axios.delete(URL + `${argument.id}`, config)
+            console.log(appointmentData);
 
+            return setTimeout(() => {
+                history.push('/profile')
+            }, 1000);
+        }
+        /*`http://localhost:3000/appointment/${argument.id}`*/
     }
 
-    // console.log(appointment.future,'<===================SET==========>')
     if(!appointment.future?.result){
         return (
             <div>

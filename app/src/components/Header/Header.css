@@ -3,3 +3,11 @@
 
     background-color: yellow;
 }
+
+.headerContainer {
+    width:  100%;
+    padding: 1rem; 
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+
+}

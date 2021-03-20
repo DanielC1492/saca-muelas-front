@@ -9,3 +9,15 @@
 .loginBtn {
     cursor: pointer;
 }
+
+.formRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40em;
+    width: 100%;
+    background-color: teal;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+
+}
