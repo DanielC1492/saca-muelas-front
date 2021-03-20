@@ -68,7 +68,7 @@ const Login = (props) =>{
                 Not a client? Sign up.
                 </div>
                 <div className="button">
-                    <Boton name='Volver'  destination=''/>
+                    <Boton name='Back'  destination=''/>
                 </div>
             </div>  
         </div>

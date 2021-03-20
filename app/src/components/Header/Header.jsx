@@ -32,8 +32,8 @@ const Header = (props) => {
                 :
                 <>
                     <div>
-                        {`Bye ${props.client.name}`}
-                        <div onClick={()=> logOut()}>logOut</div>
+                        Bye
+                        {/* <div onClick={()=> logOut()}>logOut</div> */}
                         {/* <button  onClick={()=> logOut()}>LogOut</button> */}
                     </div>
                 </>

@@ -52,9 +52,17 @@ const Schedule = (props) => {
         console.log(data,'<==============================>')
 
         return setTimeout(() => {
-            history.push('/appointment')
+            history.push('/profile/appointment')
         }, 1000);
     };
+
+    const redirect = () => {
+        return setTimeout(() => {
+          history.push('/profile')
+        }, 1000);
+
+    }
+
     
     return (
         <div className="viewSchedule">
@@ -81,6 +89,7 @@ const Schedule = (props) => {
 
                 {/* <input type="text" maxLength="30" placeholder="" name="ProfessionalId" onChange={stateHandler} onKeyDown={handleOnKeyDown}/> */}
                 <button className='loginBtn' onClick={()=> sendData()}>Send</button>
+                <button className='loginBtn' onClick={()=> redirect()}>Back</button>
             </div>
         </div>
     )
