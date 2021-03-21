@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import './ShowAppointments.css'
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment';
+import { NavbarAdmin } from '../../components/Navbar/Navbar';
+import './ShowAppointments.css'
 
 
 const ShowAppointments = () => {
@@ -9,7 +12,12 @@ const ShowAppointments = () => {
         record: []
     })
    
-    
+    const history = useHistory();
+
+    useEffect(() => {
+        getAppointments();
+    },[]);
+
     
     const getAppointments = async () =>{
 
@@ -21,17 +29,22 @@ const ShowAppointments = () => {
         })
     };
 
-    useEffect(() => {
-        getAppointments();
-    },[]);
+    const clickMe = async (argument) => {
+        console.log(argument)
+        
+        const selectAppointment = window.confirm('You are about to delete your appointment, are you sure?');
 
-    console.log(getAppointments);
+        if(selectAppointment == true){
+            const deleteAppointment = await axios.delete('http://localhost:3000/appointment/' + `${argument.id}`)
+            console.log(deleteAppointment);
 
-    // const getClients = async () =>{
-    //     const clients = await axios.get('http://localhost:3000/clients/')
-       
-    //     console.log(clients.data);
-    // }
+            return setTimeout(() => {
+                history.push('/admin')
+            }, 1000);
+        }
+    }
+
+    console.log(appointments,'ESTOY SETEANDO<=========')
 
     if(!appointments.record?.result){
         return (
@@ -42,15 +55,14 @@ const ShowAppointments = () => {
     }else{
         return (
             <div>
-                {/* <NavbarProfile/> */}
+                <NavbarAdmin/>
                 {/* <button className='loginBtn' onClick={()=> allData()} onChange={stateHandler} >Show</button> */}
                 <div className='mapContainer'>
                     {appointments.record?.result.map(consultation => {
                         return (
-                            <div className='dataCollection' key={consultation.id} /*onClick={()=> clickMe(consultation)}*/>
+                            <div className='dataCollection' key={consultation.id} onClick={()=> clickMe(consultation)}>
                                 <div className='professional'>
                                     Professional: {consultation.ProfessionalId}
-                                    {/* moment.format('Do-MMMM-YYYY')} */}
                                 </div>
                                 <div className='id'>
                                     Appointment: {consultation.id}
@@ -59,7 +71,7 @@ const ShowAppointments = () => {
                                     Covid: {JSON.stringify(consultation.covid)}
                                 </div>
                                 <div className='date'>
-                                    Date: {consultation.date}
+                                    Date: {moment(consultation.date).format('DD MM YYYY hh:mm:ss')}
                                 </div>
                             </div>
                         )

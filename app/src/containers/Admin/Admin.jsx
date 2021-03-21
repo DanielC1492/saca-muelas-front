@@ -27,14 +27,9 @@ const Admin = (props) => {
     
 
     return (
-        <div>
-          
-            WELCOME BACK GEEK 
-            <NavbarAdmin>
+        <div>          
+            <NavbarAdmin/>
                 
-            </NavbarAdmin>
-           
-            
             <div className='buttons'>
             <button className='buttonAdmin appointment' name='Appointments' onClick={() => redirect()}>Appointments</button>
             {/* <button className='buttonAdmin client' name='Clients' onClick={() => getClients()}>Clients</button> */}
@@ -47,10 +42,5 @@ const Admin = (props) => {
 
 
 }
-
-
-
-
-
 
 export default Admin;
