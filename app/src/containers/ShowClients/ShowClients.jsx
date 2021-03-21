@@ -28,20 +28,20 @@ const ShowClients = () => {
         })
     };
 
-    // const clickMe = async (argument) => {
-    //     console.log(argument)
+    const clickMe = async (argument) => {
+        console.log(argument)
         
-    //     const selectAppointment = window.confirm('You are about to delete an appointment, are you sure?');
+        const selectClient = window.confirm('You are about to delete this user, are you sure?');
 
-    //     if(selectAppointment == true){
-    //         const deleteAppointment = await axios.delete('http://localhost:3000/appointment/' + `${argument.id}`)
-    //         console.log(deleteAppointment);
+        if(selectClient == true){
+            const deleteClient = await axios.delete('http://localhost:3000/clients/' + `${argument.id}`)
+            console.log(deleteClient);
 
-    //         return setTimeout(() => {
-    //             history.push('/admin')
-    //         }, 1000);
-    //     }
-    // }
+            return setTimeout(() => {
+                history.push('/admin')
+            }, 1000);
+        }
+    }
 
     console.log(clients,'ESTOY SETEANDO<=========')
 
@@ -59,7 +59,7 @@ const ShowClients = () => {
                 <div className='mapContainer'>
                     {clients?.record.map(consultation => {
                         return (
-                            <div className='dataCollection' key={consultation.id} /*onClick={()=> clickMe(consultation)}*/>
+                            <div className='dataCollection' key={consultation.id} onClick={()=> clickMe(consultation)}>
                                 <div className='id'>
                                     ID: {consultation.id}
                                 </div>
