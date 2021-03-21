@@ -9,6 +9,7 @@ import Appointment from './containers/Appointment/Appointment';
 import Schedule from './containers/Schedule/Schedule';
 import Admin from './containers/Admin/Admin';
 import ShowAppointments from './containers/ShowAppointments/ShowAppointments';
+import ShowClients from './containers/ShowClients/ShowClients';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/profile' exact component={Profile} />
           <Route path='/admin' exact component={Admin}/>
           <Route path='/allAppointments' exact component={ShowAppointments}/>
+          <Route path='/showClients' exact component={ShowClients}/>
           <Route path='/profile/appointment' exact component={Appointment}/>
           <Route path='/profile/schedule' exact component={Schedule} />
         </Switch>

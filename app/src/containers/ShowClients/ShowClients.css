@@ -1,0 +1,39 @@
+.divGeneral{
+    height: 30em;
+    width: 30em;
+    background-color: darkmagenta;
+}
+
+.mapContainer {
+    display: flex;
+    height: 40em;
+    width: 100%;
+    /* background-color: teal; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.dataCollection {
+    display: flex;
+    background-color: #0fa4dfde;
+    border-radius: 0.5em;
+    height: 20em;
+    width: 30em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1em;
+    cursor: pointer;
+
+}
+
+.professional {
+    display: flex;
+    /* background-color: turquoise; */
+    justify-content: center;
+    align-items: center;
+}
