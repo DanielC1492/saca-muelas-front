@@ -33,7 +33,7 @@ const NavbarAdmin = () => {
             <div>
                 <ul className="nav">
                     <li><Link to="/allAppointments">All Appointments</Link></li>
-                    <li><Link to="/allClients">Schedule an appointment</Link></li>
+                    <li><Link to="/showClients">All Clients</Link></li>
                     <li><Header>LogOut</Header></li>        
                 </ul>
             </div>  

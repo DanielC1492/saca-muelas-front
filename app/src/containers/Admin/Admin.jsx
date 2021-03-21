@@ -17,7 +17,7 @@ const Admin = (props) => {
     // } 
     console.log(props)
     return (
-        <div>          
+        <div className='adminContainer'>          
             <NavbarAdmin/>
 
             <div className="info">

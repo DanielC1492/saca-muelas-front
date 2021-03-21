@@ -1,52 +1,63 @@
 
-.promo{
-    height: 10em;
-    width: 100vw;
-    background-color: crimson;
-   
-}
-
-.p1 {
-    margin-bottom: 1em;
-    background-color: rgb(67, 139, 0);
-}
-
-.text{
-    height: 10em;
-    width: 100vw;
-    text-align: justify;
-}
-
-.buttons{
+.adminContainer {
     display: flex;
+    flex-direction: column;
+    align-content: center;
     justify-content: center;
-    align-self: center;
-    margin-top: 3em;
-   
+    width: 100%;
+    height: 45.5em;
+    background-color: teal;
+}
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 30.5em;
+    font-family: 'Orbitron', sans-serif;  
+
+
     
 }
 
-
-.buttonAdmin{
-    height: 7em;
-    width: 10em;
-    background-color: rgb(42, 71, 165);
-    border-radius: 2em;
-    transition: 0.2s;
+.profileName{
+    display: flex;
+    border-radius: 0.5em;
+    height: 2em;
+    width: 15em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1em;
     
 }
 
-.buttonAdmin:focus{
-    outline: 0;
-}
-.buttonAdmin:hover{
-    height: 6.5em;
-    width: 9.5em;
-    background-color: rgba(42, 71, 165, 0.411);
-    border-radius: 2em;
-    transition: 0.2s;
+.profilePhone{
+    display: flex;
+    border-radius: 0.5em;
+    height: 2em;
+    width: 15em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1em;
+    
 }
 
-.appointment{
-    margin-right: 3em;  
+.profileEmail{
+    display: flex;
+    /* border-radius: 0.5em; */
+    height: 2em;
+    width: 15em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1em;
+
 }
