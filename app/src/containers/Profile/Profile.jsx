@@ -42,7 +42,7 @@ const Profile = (props) => {
 
 const mapStateToProps = state => {
     return {
-        client: state.user
+        client: state.userReducer.user
     }
 }
 

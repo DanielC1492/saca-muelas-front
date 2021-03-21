@@ -5,6 +5,7 @@ import Boton from '../../components/Boton/Boton';
 import './Login.css'
 import { connect } from 'react-redux';
 import { LOGIN } from "../../redux/types/userTypes";
+import { ADMINLOGIN } from "../../redux/types/adminTypes";
 
 
 const Login = (props) =>{
@@ -13,9 +14,12 @@ const Login = (props) =>{
 
     const [user, setUser] = useState({
         email : '',
-        password : ''
+        password : '',
+        userType: 'Client'
         
     });
+
+    const [message, setMessage] = useState('')
 
     const stateHandler = (event) => {
         setUser({...user, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
@@ -24,26 +28,46 @@ const Login = (props) =>{
     const handleOnKeyDown = ( event ) => {
         if(event.keyCode === 13) sendData()
     }
-
+    
     const sendData = async () => {
 
-        const body = {
-            email: user.email,
-            password: user.password
-        };
+        try {
+            
+            if(user.userType === 'Client'){
+                console.log('HOLIWI ESTOY EN EL IF TAL CUAL')
+                const body = {
+                    email: user.email,
+                    password: user.password
+                };
 
-        const res = await axios.post('http://localhost:3000/clients/login', body)
-        console.log(res)
-        localStorage.setItem("token", JSON.stringify(res))
-        localStorage.setItem("client", JSON.stringify(res.data.client))
-        props.dispatch({type: LOGIN, payload: res.data})
-        
-        
-        return setTimeout(() => {
-            history.push('/profile')
-        }, 1000)
+                const res = await axios.post('http://localhost:3000/clients/login', body)
+                console.log(res)
+                localStorage.setItem("token", JSON.stringify(res))
+                localStorage.setItem("client", JSON.stringify(res.data.client))
+                props.dispatch({type: LOGIN, payload: res.data})
+                
+                
+                return setTimeout(() => {
+                    history.push('/profile')
+                }, 1000)
+   
+            }else{
+
+                console.log('HOLI LA MOVIDA TAL QUE TE CONTÉ PUES AQUI NO ENTRA')
+                const resAdmin = await axios.post('http://localhost:3000/clinic/login', user)
+                localStorage.setItem("token", JSON.stringify(resAdmin))
+                localStorage.setItem("clinic", JSON.stringify(resAdmin.data.clinic))
+                props.dispatch({type: ADMINLOGIN, payload: resAdmin.data})
+
+                return setTimeout(() => {
+                    history.push('/admin')
+                }, 1000)
+            }
+        } catch(error){
+            setMessage('Email or password not found');
+        }
     };
-
+    
     const redirect = () => {
         return setTimeout(() => {
           history.push('/register')
@@ -83,6 +107,10 @@ const Login = (props) =>{
                 <input checked= {checkbox} type= 'checkbox' onChange={() => toggle()} className='showPW' name='showPS'></input>
                 <p className='showPWText'>Show Password</p>
                 </div>
+                <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={stateHandler}>
+                    <option value="Client">Client</option>
+                    <option value="Admin">Admin</option>
+                </select>
                 <button className='loginBtn' onClick={()=> sendData()}>Login</button>
                 <div onClick={() => redirect()} className='createAccount'>
                 Not a client? Sign up.
@@ -96,3 +124,4 @@ const Login = (props) =>{
 }
 
 export default connect() (Login);
+    
